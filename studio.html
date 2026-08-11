@@ -17,13 +17,7 @@
       --bg: #ffffff;
       --soft: #f9fafb;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       background: var(--bg);
@@ -31,347 +25,124 @@
       line-height: 1.5;
       min-height: 100vh;
     }
-
-    /* Header */
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 2rem;
+      padding: 1rem 1.5rem;
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      background: rgba(255,255,255,0.95);
+      background: rgba(255,255,255,0.96);
       backdrop-filter: blur(8px);
       z-index: 50;
     }
-
-    .logo {
-      font-weight: 800;
-      font-size: 1.35rem;
-      letter-spacing: -0.03em;
-    }
-
-    .logo span {
-      color: var(--red);
-    }
-
-    nav {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      color: var(--text);
-    }
-
+    .logo { font-weight: 800; font-size: 1.3rem; letter-spacing: -0.03em; }
+    .logo span { color: var(--red); }
+    nav { display: flex; gap: 1rem; align-items: center; }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.65rem 1.25rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: pointer;
-      border: none;
-      transition: all 0.15s ease;
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem;
+      padding: 0.65rem 1.2rem; border-radius: 10px; font-weight: 600; font-size: 0.9rem;
+      cursor: pointer; border: none; transition: all 0.15s ease; font-family: inherit;
     }
-
-    .btn-primary {
-      background: var(--red);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--red-hover);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
-
-    .btn-outline:hover {
-      background: var(--soft);
-    }
-
-    .btn:disabled {
-      opacity: 0.55;
-      cursor: not-allowed;
-    }
-
-    /* Hero / Main */
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 5rem;
-    }
-
-    .hero {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
+    .btn-primary { background: var(--red); color: white; }
+    .btn-primary:hover { background: var(--red-hover); }
+    .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+    .btn-outline:hover { background: var(--soft); }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    main { max-width: 720px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    .hero { text-align: center; margin-bottom: 2rem; }
     .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 3.4rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1.1;
-      margin-bottom: 0.75rem;
+      font-size: clamp(1.9rem, 5vw, 2.8rem); font-weight: 800;
+      letter-spacing: -0.04em; line-height: 1.15; margin-bottom: 0.6rem;
     }
-
-    .hero h1 .accent {
-      color: var(--red);
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 1.1rem;
-      max-width: 520px;
-      margin: 0 auto 1.75rem;
-    }
-
-    /* Upload zone */
+    .hero h1 .accent { color: var(--red); }
+    .hero p { color: var(--muted); font-size: 1.05rem; max-width: 420px; margin: 0 auto; }
     .studio-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+      background: white; border: 1px solid var(--border); border-radius: 18px;
+      overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.04);
     }
-
     .upload-area {
-      padding: 3rem 2rem;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-      background: var(--soft);
-      transition: background 0.2s;
+      padding: 2.5rem 1.5rem; text-align: center; background: var(--soft); transition: background 0.2s;
     }
-
-    .upload-area.dragover {
-      background: #fef2f2;
-      border-color: var(--red);
-    }
-
+    .upload-area.dragover { background: #fef2f2; }
     .upload-icon {
-      width: 56px;
-      height: 56px;
-      margin: 0 auto 1rem;
-      background: white;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--border);
-      font-size: 1.6rem;
+      width: 52px; height: 52px; margin: 0 auto 0.9rem; background: white;
+      border-radius: 14px; display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border); font-size: 1.5rem;
     }
-
-    .upload-area h2 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-    }
-
-    .upload-area p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.25rem;
-    }
-
-    #fileInput {
-      display: none;
-    }
-
-    /* Preview section */
-    .preview-section {
-      display: none;
-      padding: 1.5rem;
-    }
-
-    .preview-section.active {
-      display: block;
-    }
-
+    .upload-area h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .upload-area p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.1rem; }
+    #fileInput { display: none; }
+    .preview-section { display: none; padding: 1.25rem; }
+    .preview-section.active { display: block; }
     .compare-wrap {
-      position: relative;
-      max-width: 640px;
-      margin: 0 auto 1.5rem;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: #f3f4f6;
-      aspect-ratio: 1;
+      position: relative; max-width: 100%; margin: 0 auto 1.25rem;
+      border-radius: 14px; overflow: hidden; border: 1px solid var(--border);
+      background: #f3f4f6; aspect-ratio: 1;
     }
-
-    .compare-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
+    .compare-wrap img, .compare-wrap canvas {
+      width: 100%; height: 100%; object-fit: contain; display: block;
     }
-
     .labels {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      right: 12px;
-      display: flex;
-      justify-content: space-between;
-      pointer-events: none;
+      position: absolute; top: 10px; left: 10px; right: 10px;
+      display: flex; justify-content: space-between; pointer-events: none; z-index: 2;
     }
-
     .label {
-      background: rgba(0,0,0,0.65);
-      color: white;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.3rem 0.7rem;
-      border-radius: 999px;
+      background: rgba(0,0,0,0.65); color: white; font-size: 0.72rem;
+      font-weight: 600; padding: 0.28rem 0.65rem; border-radius: 999px;
     }
-
-    .result-img {
-      background: white;
-    }
-
-    /* Controls */
     .controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 1rem;
+      display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-bottom: 0.75rem;
     }
-
     .status {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-      min-height: 1.4em;
+      text-align: center; color: var(--muted); font-size: 0.88rem;
+      min-height: 1.4em; padding: 0 0.5rem;
     }
-
-    .status.error {
-      color: var(--red);
-    }
-
-    .status.success {
-      color: #059669;
-    }
-
-    /* Features */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.25rem;
-      margin-top: 3.5rem;
-    }
-
-    .feature {
-      padding: 1.25rem;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: white;
-    }
-
-    .feature-icon {
-      font-size: 1.5rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .feature h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-    }
-
-    .feature p {
-      font-size: 0.875rem;
-      color: var(--muted);
-    }
-
-    /* Footer note */
-    .note {
-      margin-top: 2.5rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    .spinner {
-      display: inline-block;
-      width: 18px;
-      height: 18px;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-top-color: white;
-      border-radius: 50%;
-      animation: spin 0.7s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
+    .status.error { color: var(--red); }
+    .status.success { color: #059669; }
     .progress-bar {
-      width: 100%;
-      max-width: 280px;
-      height: 6px;
-      background: #e5e7eb;
-      border-radius: 99px;
-      margin: 0.75rem auto 0;
-      overflow: hidden;
-      display: none;
+      width: 100%; max-width: 260px; height: 5px; background: #e5e7eb;
+      border-radius: 99px; margin: 0.6rem auto 0; overflow: hidden; display: none;
     }
-
-    .progress-bar.active {
-      display: block;
-    }
-
+    .progress-bar.active { display: block; }
     .progress-fill {
-      height: 100%;
-      background: var(--red);
-      width: 0%;
-      transition: width 0.25s ease;
-      border-radius: 99px;
+      height: 100%; background: var(--red); width: 0%;
+      transition: width 0.3s ease; border-radius: 99px;
     }
-
-    @media (max-width: 600px) {
-      header {
-        padding: 0.85rem 1rem;
-      }
-      nav a:not(.btn) {
-        display: none;
-      }
-      main {
-        padding: 2rem 1rem 3rem;
-      }
+    .features {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 2.5rem;
     }
+    @media (max-width: 480px) { .features { grid-template-columns: 1fr; } }
+    .feature {
+      padding: 1rem; border: 1px solid var(--border); border-radius: 12px; background: white;
+    }
+    .feature-icon { font-size: 1.35rem; margin-bottom: 0.4rem; }
+    .feature h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .feature p { font-size: 0.82rem; color: var(--muted); }
+    .note {
+      margin-top: 2rem; text-align: center; font-size: 0.8rem; color: var(--muted); line-height: 1.5;
+    }
+    .spinner {
+      display: inline-block; width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,0.3); border-top-color: white;
+      border-radius: 50%; animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">Studio<span>Clean</span>.</div>
     <nav>
-      <a href="#hoe">Hoe het werkt</a>
-      <a href="#features">Voordelen</a>
-      <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">Probeer gratis</button>
+      <button class="btn btn-primary" id="headerUploadBtn">Probeer gratis</button>
     </nav>
   </header>
 
   <main>
     <section class="hero">
       <h1>Foto in.<br><span class="accent">Listing out.</span></h1>
-      <p>Maak van een rommelige foto een strakke productfoto met witte achtergrond — perfect voor Marktplaats, eBay, Vinted en meer.</p>
+      <p>Maak van een rommelige foto een strakke productfoto met witte achtergrond — perfect voor Marktplaats, eBay en Vinted.</p>
     </section>
 
     <div class="studio-card">
@@ -390,8 +161,7 @@
             <span class="label" id="resultLabel">Studio Mode</span>
           </div>
           <img id="originalImg" alt="Origineel" style="display:none" />
-          <img id="resultImg" class="result-img" alt="Resultaat" style="display:none" />
-          <canvas id="canvas" style="display:none"></canvas>
+          <canvas id="resultCanvas" style="display:none"></canvas>
         </div>
 
         <div class="controls">
@@ -409,45 +179,53 @@
       </div>
     </div>
 
-    <div class="features" id="features">
+    <div class="features">
       <div class="feature">
         <div class="feature-icon">🤍</div>
         <h3>Witte achtergrond</h3>
-        <p>Zuivere witte studio-achtergrond die voldoet aan eisen van Marktplaats, Amazon en eBay.</p>
+        <p>Zuivere witte studio-achtergrond die voldoet aan eisen van Marktplaats en eBay.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">✨</div>
         <h3>Nettere randen</h3>
-        <p>AI haalt de achtergrond weg en houdt de randen van je product strak en natuurlijk.</p>
+        <p>AI haalt de achtergrond weg en houdt de randen van je product strak.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">📱</div>
         <h3>Klaar voor marktplaats</h3>
-        <p>Ideaal formaat en look zodat je listings er professioneel uitzien in plaats van een slaapkamer.</p>
+        <p>Professionele look in plaats van een slaapkamer of parkeerplaats.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">🔒</div>
         <h3>Privacy-first</h3>
-        <p>Verwerking gebeurt lokaal in je browser. Je foto’s verlaten je apparaat niet.</p>
+        <p>Alles gebeurt lokaal in je browser. Foto’s verlaten je apparaat niet.</p>
       </div>
     </div>
 
-    <p class="note" id="hoe">
-      Powered by client-side AI (IMG.LY). Eerste keer kan even duren omdat het model wordt geladen (~30–80 MB). Daarna is het sneller.
+    <p class="note">
+      Powered by RMBG-1.4 (Transformers.js). Eerste keer laadt het AI-model (~40–50 MB).<br>
+      Daarna is het sneller. Werkt het best in Chrome of Edge.
     </p>
   </main>
 
   <script type="module">
-    // Dynamic import of background removal
-    let removeBackground = null;
-    let modelReady = false;
+    import {
+      AutoModel,
+      AutoProcessor,
+      RawImage,
+      env
+    } from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.4.0';
+
+    env.allowLocalModels = false;
+    env.useBrowserCache = true;
 
     const dropZone = document.getElementById('dropZone');
     const fileInput = document.getElementById('fileInput');
     const uploadBtn = document.getElementById('uploadBtn');
+    const headerUploadBtn = document.getElementById('headerUploadBtn');
     const previewSection = document.getElementById('previewSection');
     const originalImg = document.getElementById('originalImg');
-    const resultImg = document.getElementById('resultImg');
+    const resultCanvas = document.getElementById('resultCanvas');
     const processBtn = document.getElementById('processBtn');
     const processText = document.getElementById('processText');
     const downloadBtn = document.getElementById('downloadBtn');
@@ -457,8 +235,12 @@
     const progressFill = document.getElementById('progressFill');
     const resultLabel = document.getElementById('resultLabel');
 
-    let currentFile = null;
+    let currentObjectUrl = null;
     let resultBlob = null;
+    let model = null;
+    let processor = null;
+    let modelLoading = false;
+    let modelReady = false;
 
     function setStatus(msg, type = '') {
       statusEl.textContent = msg;
@@ -475,22 +257,52 @@
       progressFill.style.width = '0%';
     }
 
-    // Load library
-    async function loadLibrary() {
-      if (removeBackground) return true;
-      setStatus('AI-model wordt geladen… (één keer, even geduld)');
-      showProgress(10);
+    async function loadModel() {
+      if (modelReady) return true;
+      if (modelLoading) return false;
+
+      modelLoading = true;
+      setStatus('AI-model wordt geladen… (één keer, ~40–50 MB)');
+      showProgress(8);
+
       try {
-        const mod = await import('https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.5.5/dist/index.mjs');
-        removeBackground = mod.default || mod.removeBackground || mod;
+        let fake = 8;
+        const tick = setInterval(() => {
+          fake = Math.min(55, fake + 3);
+          showProgress(fake);
+        }, 400);
+
+        model = await AutoModel.from_pretrained('briaai/RMBG-1.4', {
+          config: { model_type: 'custom' },
+        });
+
+        processor = await AutoProcessor.from_pretrained('briaai/RMBG-1.4', {
+          config: {
+            do_normalize: true,
+            do_pad: false,
+            do_rescale: true,
+            do_resize: true,
+            image_mean: [0.5, 0.5, 0.5],
+            feature_extractor_type: 'ImageFeatureExtractor',
+            image_std: [1, 1, 1],
+            resample: 2,
+            rescale_factor: 0.00392156862745098,
+            size: { width: 1024, height: 1024 },
+          },
+        });
+
+        clearInterval(tick);
         modelReady = true;
-        hideProgress();
+        modelLoading = false;
+        showProgress(100);
+        setTimeout(hideProgress, 400);
         setStatus('Model geladen. Klaar om te verwerken.');
         return true;
       } catch (err) {
         console.error(err);
+        modelLoading = false;
         hideProgress();
-        setStatus('Kon AI-model niet laden. Controleer internetverbinding.', 'error');
+        setStatus('Kon AI-model niet laden. Probeer Chrome/Edge of herlaad de pagina.', 'error');
         return false;
       }
     }
@@ -500,22 +312,21 @@
         setStatus('Kies een geldige afbeelding (JPG, PNG of WEBP).', 'error');
         return;
       }
-      if (file.size > 15 * 1024 * 1024) {
-        setStatus('Bestand te groot (max. 15 MB).', 'error');
+      if (file.size > 12 * 1024 * 1024) {
+        setStatus('Bestand te groot (max. 12 MB).', 'error');
         return;
       }
 
-      currentFile = file;
+      if (currentObjectUrl) URL.revokeObjectURL(currentObjectUrl);
+      currentObjectUrl = URL.createObjectURL(file);
       resultBlob = null;
       downloadBtn.disabled = true;
       processBtn.disabled = false;
       processText.textContent = 'Maak studio-foto';
 
-      const url = URL.createObjectURL(file);
-      originalImg.src = url;
+      originalImg.src = currentObjectUrl;
       originalImg.style.display = 'block';
-      resultImg.style.display = 'none';
-      resultImg.src = '';
+      resultCanvas.style.display = 'none';
       resultLabel.textContent = 'Studio Mode';
 
       dropZone.style.display = 'none';
@@ -523,8 +334,8 @@
       setStatus('Foto geladen. Klik op “Maak studio-foto”.');
     }
 
-    // Events
     uploadBtn.addEventListener('click', () => fileInput.click());
+    headerUploadBtn.addEventListener('click', () => fileInput.click());
     fileInput.addEventListener('change', (e) => {
       if (e.target.files?.[0]) handleFile(e.target.files[0]);
     });
@@ -541,14 +352,14 @@
     });
 
     processBtn.addEventListener('click', async () => {
-      if (!currentFile) return;
+      if (!currentObjectUrl) return;
 
       processBtn.disabled = true;
       processText.innerHTML = '<span class="spinner"></span> Bezig…';
-      setStatus('Achtergrond wordt verwijderd en witte studio-achtergrond toegepast…');
-      showProgress(15);
+      setStatus('Achtergrond verwijderen + witte studio-achtergrond…');
+      showProgress(10);
 
-      const ok = await loadLibrary();
+      const ok = await loadModel();
       if (!ok) {
         processBtn.disabled = false;
         processText.textContent = 'Maak studio-foto';
@@ -556,57 +367,51 @@
       }
 
       try {
-        showProgress(30);
-        const blob = await removeBackground(currentFile, {
-          model: 'small', // sneller; 'medium' voor hogere kwaliteit
-          output: {
-            format: 'image/png',
-            quality: 0.92
-          },
-          progress: (key, current, total) => {
-            const pct = 30 + Math.round((current / total) * 60);
-            showProgress(pct);
-          }
-        });
+        showProgress(25);
+        setStatus('Afbeelding analyseren…');
 
-        // Zet resultaat op witte achtergrond (PNG is al transparent → canvas)
-        const img = new Image();
-        const transparentUrl = URL.createObjectURL(blob);
+        const image = await RawImage.fromURL(currentObjectUrl);
 
-        await new Promise((resolve, reject) => {
-          img.onload = resolve;
-          img.onerror = reject;
-          img.src = transparentUrl;
-        });
+        showProgress(40);
+        const { pixel_values } = await processor(image);
 
-        const canvas = document.createElement('canvas');
-        canvas.width = img.naturalWidth;
-        canvas.height = img.naturalHeight;
+        showProgress(55);
+        setStatus('AI verwijdert de achtergrond…');
+        const { output } = await model({ input: pixel_values });
+
+        showProgress(75);
+        const mask = await RawImage.fromTensor(
+          output[0].mul(255).to('uint8')
+        ).resize(image.width, image.height);
+
+        image.putAlpha(mask);
+
+        const canvas = resultCanvas;
+        canvas.width = image.width;
+        canvas.height = image.height;
         const ctx = canvas.getContext('2d');
 
-        // Witte achtergrond
         ctx.fillStyle = '#FFFFFF';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, 0, 0);
+        ctx.drawImage(image.toCanvas(), 0, 0);
 
-        const finalBlob = await new Promise(r => canvas.toBlob(r, 'image/png', 0.95));
-        resultBlob = finalBlob;
-
-        const resultUrl = URL.createObjectURL(finalBlob);
-        resultImg.src = resultUrl;
-        resultImg.style.display = 'block';
         originalImg.style.display = 'none';
+        canvas.style.display = 'block';
         resultLabel.textContent = 'Studio Mode ✓';
+
+        resultBlob = await new Promise((resolve) =>
+          canvas.toBlob(resolve, 'image/png', 0.95)
+        );
 
         downloadBtn.disabled = false;
         processText.textContent = 'Klaar!';
         showProgress(100);
-        setTimeout(hideProgress, 600);
+        setTimeout(hideProgress, 500);
         setStatus('Studio-foto klaar. Download en gebruik op Marktplaats of andere platforms.', 'success');
       } catch (err) {
         console.error(err);
         hideProgress();
-        setStatus('Er ging iets mis bij het verwerken. Probeer een andere foto of herlaad de pagina.', 'error');
+        setStatus('Er ging iets mis. Probeer een andere (kleinere) foto of herlaad de pagina.', 'error');
         processText.textContent = 'Opnieuw proberen';
         processBtn.disabled = false;
       }
@@ -621,13 +426,13 @@
     });
 
     resetBtn.addEventListener('click', () => {
-      currentFile = null;
+      if (currentObjectUrl) URL.revokeObjectURL(currentObjectUrl);
+      currentObjectUrl = null;
       resultBlob = null;
       fileInput.value = '';
       originalImg.src = '';
-      resultImg.src = '';
       originalImg.style.display = 'none';
-      resultImg.style.display = 'none';
+      resultCanvas.style.display = 'none';
       previewSection.classList.remove('active');
       dropZone.style.display = 'block';
       processBtn.disabled = true;
